@@ -1,0 +1,16 @@
+hunt_id: HUNT-001
+technique: T1059.001
+name: Encoded PowerShell execution
+
+hypothesis: >
+  If PowerShell is abused for execution, encoded commands
+  will appear in process creation logs and script block logs.
+
+required_telemetry:
+  - Security Event ID 4688 (command line enabled)
+  - PowerShell Script Block Logging (4104)
+
+hunt_steps:
+  - Filter for powershell.exe with -enc or -encodedcommand
+  - Review parent process and user
+  - Identify follow-on behavior

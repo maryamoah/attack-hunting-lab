@@ -1,0 +1,14 @@
+technique_id: T1059.001
+technique_name: PowerShell
+tactic:
+  - Execution
+platforms:
+  - Windows
+data_sources:
+  - Process Creation
+  - Script Execution
+log_sources:
+  - Windows Security Event Log (4688)
+  - PowerShell Operational Log (4104)
+coverage_status: partial
+last_reviewed: 2026-01-28

@@ -1,0 +1,26 @@
+title: PowerShell EncodedCommand Execution
+id: 9b3e2a6e-f5e4-4b1f-bf0c-ps-encoded
+status: experimental
+description: Detects PowerShell execution with encoded commands
+references:
+  - https://attack.mitre.org/techniques/T1059/001/
+author: attack-hunting-lab
+date: 2026-01-28
+tags:
+  - attack.execution
+  - attack.t1059.001
+
+logsource:
+  product: windows
+  category: process_creation
+
+detection:
+  selection_img:
+    Image|endswith: '\powershell.exe'
+  selection_cli:
+    CommandLine|contains:
+      - ' -enc'
+      - ' -encodedcommand'
+  condition: selection_img and selection_cli
+
+level: high
