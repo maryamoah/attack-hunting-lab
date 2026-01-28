@@ -1,0 +1,51 @@
+{
+  "name": "attack-hunting-lab \u2013 Coverage",
+  "versions": {
+    "layer": "4.5",
+    "navigator": "4.9.0"
+  },
+  "domain": "enterprise-attack",
+  "description": "Coverage generated from attack-hunting-lab meta.yml files",
+  "filters": {
+    "platforms": [
+      "Windows"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "showID": true,
+    "showName": true
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1021.001",
+      "techniqueName": "Remote Desktop Protocol",
+      "score": 40,
+      "comment": "coverage=partial"
+    },
+    {
+      "techniqueID": "T1059.001",
+      "techniqueName": "PowerShell",
+      "score": 40,
+      "comment": "coverage=partial"
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#ff9999",
+      "#ffcc66",
+      "#66ff66"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "metadata": [
+    {
+      "name": "generated",
+      "value": "2026-01-28"
+    }
+  ]
+}
