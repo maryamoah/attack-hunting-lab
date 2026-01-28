@@ -1,0 +1,27 @@
+title: RDP Logon From Unusual Source
+id: 2a1c0e44-0d9f-4e9e-bc1a-rdp-lateral
+status: experimental
+description: Detects successful RDP logons that may indicate lateral movement
+references:
+  - https://attack.mitre.org/techniques/T1021/001/
+author: attack-hunting-lab
+date: 2026-01-28
+tags:
+  - attack.lateral_movement
+  - attack.t1021.001
+
+logsource:
+  product: windows
+  service: security
+
+detection:
+  selection:
+    EventID: 4624
+    LogonType: 10
+  condition: selection
+
+falsepositives:
+  - Administrators using jump hosts
+  - Legitimate remote support
+
+level: medium

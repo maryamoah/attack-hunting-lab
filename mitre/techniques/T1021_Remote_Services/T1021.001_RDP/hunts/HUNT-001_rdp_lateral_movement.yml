@@ -1,0 +1,23 @@
+hunt_id: HUNT-001
+technique: T1021.001
+name: RDP lateral movement
+
+hypothesis: >
+  If an attacker uses RDP for lateral movement, we should see
+  successful RDP logons from unusual hosts, accounts, or times.
+
+required_telemetry:
+  - Security Event ID 4624 (LogonType=10)
+  - Security Event ID 4625 (failed attempts)
+  - RDP connection events (1149)
+
+hunt_steps:
+  - Filter 4624 where LogonType=10
+  - Identify source host and account
+  - Compare against normal admin RDP patterns
+  - Look for host-to-host chaining within short time windows
+
+expected_noise:
+  - IT administrators
+  - Jump servers
+  - Helpdesk activity

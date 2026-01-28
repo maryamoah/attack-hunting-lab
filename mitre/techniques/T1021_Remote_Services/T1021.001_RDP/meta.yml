@@ -1,0 +1,15 @@
+technique_id: T1021.001
+technique_name: Remote Desktop Protocol
+tactic:
+  - Lateral Movement
+platforms:
+  - Windows
+data_sources:
+  - Authentication Logs
+  - Network Traffic
+log_sources:
+  - Windows Security Event Log (4624, 4625)
+  - TerminalServices-LocalSessionManager (21)
+  - TerminalServices-RemoteConnectionManager (1149)
+coverage_status: partial
+last_reviewed: 2026-01-28
